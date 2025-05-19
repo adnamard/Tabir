@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./output.css" rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <div class="flex h-screen items-center justify-center bg-[#FAF5E5]">
+      <section class="mx-auto w-full max-w-[450px] px-4 py-8 sm:px-8 md:px-10 lg:px-20">
+        <div
+          class="flex w-full flex-col items-center gap-8 rounded-[50px] px-2 py-6 sm:rounded-[60px] sm:px-4 sm:py-9 md:rounded-[70px] md:px-8 md:py-11 lg:flex-row lg:py-14 xl:px-16"
+        >
+          <img
+            class="w-full max-w-[550px] bg-blue-950 lg:order-2 lg:w-1/2 lg:rounded-[80px] xl:w-full"
+            src="auth-hero.png"
+            alt=""
+          />
+
+          <div
+            class="mx-4 w-full rounded bg-white p-8 text-center shadow-md md:w-1/2 md:text-left lg:w-1/2"
+          >
+            <h1 class="mb-8 text-3xl text-center  font-bold">Register</h1>
+            <form>
+              <div class="mb-4">
+                <label class="mb-2 block font-semibold text-gray-700" for="username" >Username</label>
+                <input class="focus:shadow-outline w-full rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none"
+                  id="username" name="username" type="text" placeholder="Silahkan masukkan username kamu, ya"/>
+              </div>
+
+              <div class="mb-4">
+                <label class="mb-2 block font-semibold text-gray-700" for="emaik" >Email</label>
+                <input class="focus:shadow-outline w-full rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none"
+                  id="email" name="email" type="text" placeholder="Silahkan masukkan email kamu, ya"/>
+              </div>
+
+              <div class="mb-4">
+                <label class="mb-2 block font-semibold text-gray-700" for="password">Password</label>
+                <input class="focus:shadow-outline mb-3 w-full rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none"
+                  id="password" name="password" type="password" placeholder="Silahkan masukkan password kamu, ya"/>
+              </div>
+
+
+              <div class="mb-4">
+                <button class="focus:shadow-outline w-full rounded bg-blue-950 px-4 py-2 font-bold text-white hover:bg-zinc-700 hover:text-white focus:outline-none" type="button">Login</button>
+              </div>
+
+              <p class="text-center text-sm text-gray-600">
+                Kamu sudah punya akun?
+                <a href="login.html" class="text-blue-500 hover:underline"
+                  >Masuk ke sini yaa</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
