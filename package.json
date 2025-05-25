@@ -1,25 +1,41 @@
 {
-  "dependencies": {
-    "@hapi/hapi": "^21.4.0",
-    "@hapi/inert": "^7.1.0",
-    "@tailwindcss/cli": "^4.1.7",
-    "bcrypt": "^6.0.0",
-    "nanoid": "^5.1.5",
-    "tailwindcss": "^4.1.7"
-  },
   "name": "tabir",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/server.js",
+  "description": "TaBir - Breaking Barriers In Sign Language Communication",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http-server dist"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "pwa",
+    "sign-language",
+    "accessibility"
+  ],
+  "author": "Tabir Team",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1",
+    "workbox-precaching": "^7.3.0",
+    "workbox-routing": "^7.3.0",
+    "workbox-strategies": "^7.3.0",
+    "workbox-webpack-plugin": "^7.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "idb": "^8.0.0",
+    "regenerator-runtime": "^0.14.1"
   }
 }
