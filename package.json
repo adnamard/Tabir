@@ -32,6 +32,7 @@
     "workbox-webpack-plugin": "^7.3.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
+<<<<<<< HEAD
     "webpack-merge": "^5.10.0",
     "nodemon": "^3.1.10"
   },
@@ -46,5 +47,12 @@
     "bcrypt": "^6.0.0",
     "nanoid": "^5.1.5",
     "tailwindcss": "^4.1.7"
+=======
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "idb": "^8.0.0",
+    "regenerator-runtime": "^0.14.1"
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
   }
 }

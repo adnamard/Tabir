@@ -18,8 +18,12 @@ module.exports = {
       patterns: [
         { from: 'src/public/manifest.json', to: 'manifest.json' },
         { from: 'src/public/add-x512.png', to: 'add-x512.png' },
+<<<<<<< HEAD
         { from: 'src/public/img', to: 'img' },
         { from: 'src/public/models', to: 'models' }
+=======
+        { from: 'src/public/img', to: 'img' }
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
       ],
     }),
   ],

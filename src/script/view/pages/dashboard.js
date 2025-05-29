@@ -1,8 +1,14 @@
 import TabirIdb from '../../utils/db';
+<<<<<<< HEAD
 import SignDetector from '../../utils/signDetector';
 
 const Dashboard = {
     async render() {
+=======
+
+const Dashboard = {
+    render() {
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
         return `
             <div class="min-h-screen bg-[#FAF5E5]">
                 <!-- Header/Navbar -->
@@ -50,6 +56,7 @@ const Dashboard = {
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <!-- Video Preview and Detection -->
                         <div id="videoPreview" class="hidden mb-8">
                             <h2 class="text-xl font-semibold text-[#013366] mb-4">Video Preview</h2>
@@ -62,6 +69,13 @@ const Dashboard = {
                                 <div id="detectionResults" class="p-4 bg-gray-50 rounded-lg min-h-[50px]">
                                     <p class="text-gray-600">No signs detected yet...</p>
                                 </div>
+=======
+                        <!-- Video Preview -->
+                        <div id="videoPreview" class="hidden mb-8">
+                            <h2 class="text-xl font-semibold text-[#013366] mb-4">Video Preview</h2>
+                            <div class="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                                <video id="previewPlayer" class="w-full h-full object-contain" controls></video>
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
                             </div>
                         </div>
 
@@ -79,15 +93,19 @@ const Dashboard = {
     },
 
     async afterRender() {
+<<<<<<< HEAD
         let signDetector = null;
         let currentStream = null;
         let animationFrameId = null;
 
+=======
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
         const logoutBtn = document.getElementById('logoutBtn');
         const videoUpload = document.getElementById('videoUpload');
         const uploadStatus = document.getElementById('uploadStatus');
         const videoPreview = document.getElementById('videoPreview');
         const previewPlayer = document.getElementById('previewPlayer');
+<<<<<<< HEAD
         const startCameraBtn = document.getElementById('startCamera');
         const activityList = document.getElementById('activityList');
         const detectionResults = document.getElementById('detectionResults');
@@ -186,10 +204,18 @@ const Dashboard = {
         // Logout handler
         logoutBtn?.addEventListener('click', () => {
             stopCamera();
+=======
+        const startCamera = document.getElementById('startCamera');
+        const activityList = document.getElementById('activityList');
+
+        // Logout handler
+        logoutBtn?.addEventListener('click', () => {
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
             localStorage.removeItem('auth_token');
             window.location.hash = '#/';
         });
 
+<<<<<<< HEAD
         // Camera handler
         startCameraBtn?.addEventListener('click', async () => {
             if (startCameraBtn.textContent === 'Stop Camera') {
@@ -251,6 +277,8 @@ const Dashboard = {
             }
         });
 
+=======
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
         // File upload handler
         videoUpload?.addEventListener('change', async (e) => {
             const file = e.target.files?.[0];
@@ -259,12 +287,17 @@ const Dashboard = {
             // Show upload status
             uploadStatus.classList.remove('hidden');
             uploadStatus.querySelector('.file-name').textContent = file.name;
+<<<<<<< HEAD
+=======
+            const progressBar = uploadStatus.querySelector('.progress');
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
 
             // Show video preview
             const videoURL = URL.createObjectURL(file);
             previewPlayer.src = videoURL;
             videoPreview.classList.remove('hidden');
 
+<<<<<<< HEAD
             // Set up canvas size when video metadata is loaded
             previewPlayer.onloadedmetadata = () => {
                 detectionCanvas.width = previewPlayer.videoWidth;
@@ -282,6 +315,11 @@ const Dashboard = {
                 }
                 detectFrame();
             };
+=======
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('video', file);
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
 
             try {
                 const token = localStorage.getItem('auth_token');
@@ -293,6 +331,14 @@ const Dashboard = {
                         'Authorization': `Bearer ${token}`,
                     },
                     body: formData,
+<<<<<<< HEAD
+=======
+                    // Upload progress handler
+                    onUploadProgress: (progressEvent) => {
+                        const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                        progressBar.style.width = `${percentCompleted}%`;
+                    },
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
                 });
 
                 const result = await response.json();
@@ -302,12 +348,21 @@ const Dashboard = {
                     const activity = document.createElement('div');
                     activity.className = 'flex items-center justify-between p-4 bg-white rounded-lg shadow';
                     activity.innerHTML = `
+<<<<<<< HEAD
                         <div>
                             <h3 class="font-semibold text-[#013366]">${file.name}</h3>
                             <p class="text-sm text-gray-600">Uploaded successfully</p>
                         </div>
                         <span class="text-green-500">✓</span>
                     `;
+=======
+            <div>
+              <h3 class="font-semibold text-[#013366]">${file.name}</h3>
+              <p class="text-sm text-gray-600">Uploaded successfully</p>
+            </div>
+            <span class="text-green-500">✓</span>
+          `;
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
 
                     if (activityList.firstChild.textContent === 'No recent activity to show.') {
                         activityList.innerHTML = '';
@@ -322,6 +377,28 @@ const Dashboard = {
                 uploadStatus.classList.add('hidden');
             }
         });
+<<<<<<< HEAD
+=======
+
+        // Camera handler
+        startCamera?.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: {
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    }
+                });
+
+                previewPlayer.srcObject = stream;
+                previewPlayer.play();
+                videoPreview.classList.remove('hidden');
+            } catch (error) {
+                console.error('Camera error:', error);
+                alert('Could not access camera: ' + error.message);
+            }
+        });
+>>>>>>> 12ffcdd7ccbaacec0f658003c80bd967dbe9ee0f
     },
 };
 
